@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0a0e17;
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom industrial scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1422;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2d42;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3d58;
+}
+
+/* Engineering grid pattern */
+.bg-tech-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.radar-glow {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.danger-glow {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.35);
+}
+
+.safe-glow {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+/* Smooth reading value transition (pure CSS, no extra timers) */
+@keyframes readingTransition {
+  0% {
+    opacity: 0.35;
+    transform: translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reading-smooth-change {
+  animation: readingTransition 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
